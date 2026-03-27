@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #000;
+  color: #fff;
+  /* Hero Quote Stroke Widths (Desktop) */
+  --hero-stroke-pulse: 3.5px;
+  --hero-stroke-mission: 4.5px;
+  --hero-stroke-sub: 2.5px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hero-stroke-pulse: 1.8px;
+    --hero-stroke-mission: 2.2px;
+    --hero-stroke-sub: 1.4px;
+  }
+}
+
+body {
+  @apply font-inter antialiased overflow-x-hidden;
+}
+
+/* Premium Grain Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.vertical-divider {
+  @apply fixed top-0 h-full border-l border-white/15 pointer-events-none z-[100];
+}
+
+#hero-title {
+  @apply text-[15vw] font-black uppercase tracking-tighter leading-none flex overflow-hidden;
+}
+
+.char {
+  @apply inline-block;
+}
+
+.draw-path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.outline-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    text-stroke: 1px rgba(255, 255, 255, 0.4);
+    color: transparent !important;
+}
+
+.ring-svg circle {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+
+.central-phrase {
+    @apply transition-all duration-700 ease-out inline-block mx-1;
+}
+
+.unblur-reveal {
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Mobile Joystick Specifics */
+.scale-ring {
+    animation: pulse-ring 3s infinite ease-in-out;
+}
+
+@keyframes pulse-ring {
+    0%, 100% { transform: scale(1.1); opacity: 0.1; }
+    50% { transform: scale(1.25); opacity: 0.25; }
+}
+
+.joystick-anchor {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+}
+
+@media (max-width: 768px) {
+    .phrase-part {
+        display: inline-block;
+        transition: all 0.5s ease-out;
+    }
+}
+
+.about-layer {
+    will-change: opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.about-layer img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Perspective for 3D Cards */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* Animated Gradient Background */
+.animated-gradient-bg {
+    background: linear-gradient(-45deg, #ffffff, #f0f9ff, #0a1c10, #141a0d, #1c1408, #050505);
+    background-size: 400% 400%;
+    animation: gradient-rotate 14s ease infinite;
+}
+
+@keyframes gradient-rotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
