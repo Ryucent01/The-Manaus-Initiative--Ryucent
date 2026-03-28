@@ -120,8 +120,8 @@ const App = () => {
                     pin: true,
                     pinSpacing: true,
                     refreshPriority: 10,
-                    onLeave: () => gsap.set('.video-container', { display: 'none' }),
-                    onEnterBack: () => gsap.set('.video-container', { display: 'block' })
+                    onLeave: () => gsap.set(['.video-container', '.hero-content-wrapper'], { autoAlpha: 0 }),
+                    onEnterBack: () => gsap.set(['.video-container', '.hero-content-wrapper'], { autoAlpha: 1 })
                 }
             });
             heroTl.to('.curtain-bar', { width: '101%', duration: 1, ease: 'none' });
@@ -493,10 +493,16 @@ const App = () => {
 
     return (
         <main ref={mainRef} className="bg-mana-bg min-h-[200vh]">
-            {/* 4-column Global Grid Lines */}
-            {[...Array(5)].map((_, i) => (
-                <div key={i} className="vertical-divider" style={{ left: `${i * 25}%` }} />
-            ))}
+            {/* 
+                Absolute Isolation Wrapper for Safari Mobile
+                When the Project page is open, we hide the entire underlying site to prevent any 
+                background text/animation leaks through the dynamic Safari viewport.
+            */}
+            <div className={`site-isolation-wrapper transition-all duration-300 ${isOriginOpen ? 'invisible opacity-0' : 'visible opacity-100'}`}>
+                {/* 4-column Global Grid Lines */}
+                {[...Array(5)].map((_, i) => (
+                    <div key={i} className="vertical-divider" style={{ left: `${i * 25}%` }} />
+                ))}
             <header className="hidden md:block fixed top-0 left-0 w-full py-4 md:py-8 pl-8 pr-20 lg:pr-28 z-[200] bg-gradient-to-b from-black/20 to-transparent">
                 <nav className="flex justify-between items-center text-[0.55rem] md:text-[0.62rem] uppercase tracking-[0.35em] md:tracking-[0.45em] font-medium text-white/40 drop-shadow-sm">
                     <div 
@@ -563,8 +569,8 @@ const App = () => {
                     </video>
                 </div>
 
-                {/* Hero Content */}
-                <div className="relative z-10 text-center flex flex-col items-center">
+                {/* Hero Content Wrapper for Unified Visibility Toggling */}
+                <div className="hero-content-wrapper relative z-10 text-center flex flex-col items-center">
                     <span className="hero-sub opacity-0 -translate-y-4 text-[0.6rem] md:text-[0.95rem] tracking-[1.8em] font-bold text-white mb-[-1.2vw] md:mb-[-1.8vw] z-20 filter drop-shadow-[0_0_15px_rgba(0,0,0,0.9)] mr-[-1.8em]">THE</span>
                     <h1 id="hero-title" className="relative">
                         {"MANAUS".split('').map((char, i) => (
@@ -684,6 +690,8 @@ const App = () => {
                         />
                     </div>
                 ))}
+            </div>
+
             </div>
 
             <InitiativeOrigin 
