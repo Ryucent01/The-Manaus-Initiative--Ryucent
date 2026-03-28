@@ -504,7 +504,7 @@ const App = () => {
                             window.lenis?.scrollTo(0, { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
                         }}
                     >
-                        MANAUS / RYUCENT
+                        MANAUS / RYUCENT™
                     </div>
                     <div className="flex gap-4 md:gap-14">
                         <div 
@@ -563,13 +563,13 @@ const App = () => {
 
                 {/* Hero Content */}
                 <div className="relative z-10 text-center flex flex-col items-center">
-                    <span className="hero-sub opacity-0 -translate-y-4 text-[0.6rem] md:text-[0.95rem] tracking-[1.8em] font-bold text-white mb-[-2.5vw] md:mb-[-1.8vw] z-20 filter drop-shadow-[0_0_15px_rgba(0,0,0,0.9)] mr-[-1.8em]">THE</span>
+                    <span className="hero-sub opacity-0 -translate-y-4 text-[0.6rem] md:text-[0.95rem] tracking-[1.8em] font-bold text-white mb-[-1.2vw] md:mb-[-1.8vw] z-20 filter drop-shadow-[0_0_15px_rgba(0,0,0,0.9)] mr-[-1.8em]">THE</span>
                     <h1 id="hero-title" className="relative">
                         {"MANAUS".split('').map((char, i) => (
                             <span key={i} className="char translate-y-full">{char}</span>
                         ))}
                     </h1>
-                    <div className="hero-sub opacity-0 translate-y-4 w-full max-w-[12rem] md:max-w-[18rem] lg:max-w-[24rem] flex justify-between text-[0.55rem] md:text-[0.9rem] font-bold text-white mt-[-2.5vw] md:mt-[-1.8vw] z-20 filter drop-shadow-[0_0_15px_rgba(0,0,0,0.9)] uppercase">
+                    <div className="hero-sub opacity-0 translate-y-4 w-full max-w-[12rem] md:max-w-[18rem] lg:max-w-[24rem] flex justify-between text-[0.55rem] md:text-[0.9rem] font-bold text-white mt-[-1vw] md:mt-[-1.8vw] z-20 filter drop-shadow-[0_0_15px_rgba(0,0,0,0.9)] uppercase">
                         {"INITIATIVE".split('').map((c, i) => (
                             <span key={i} className="inline-block">{c}</span>
                         ))}
@@ -577,7 +577,7 @@ const App = () => {
                     {/* By Ryucent */}
                     <div className="hero-sub opacity-0 translate-y-6 mt-4 md:mt-6 text-[0.45rem] md:text-[0.55rem] tracking-[0.8em] font-mono text-white/50 z-20 flex items-center gap-3">
                         <span className="w-3 md:w-5 h-[1px] bg-white/20" />
-                        BY RYUCENT
+                        BY RYUCENT™
                         <span className="w-3 md:w-5 h-[1px] bg-white/20" />
                     </div>
                 </div>
@@ -667,7 +667,7 @@ const App = () => {
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="relative h-full w-1/4">
                         <div
-                            className="curtain-bar absolute top-0 left-0 h-full bg-black w-0 z-20"
+                            className="curtain-bar absolute top-[-1vh] left-0 h-[102vh] bg-black w-0 z-20"
                         />
                     </div>
                 ))}
