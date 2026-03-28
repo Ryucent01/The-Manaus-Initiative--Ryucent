@@ -67,7 +67,7 @@ const InitiativeOrigin = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div ref={containerRef} className="fixed inset-0 z-[120] bg-[#fbc02d] overflow-hidden flex flex-col">
+        <div ref={containerRef} className="fixed -top-[5vh] left-0 right-0 h-[110vh] z-[120] bg-[#fbc02d] overflow-hidden flex flex-col">
             {/* Fixed Close Button - Positioned to avoid Navbar at top */}
             {/* Fixed Close Button - Positioned above the persistent audio player */}
             <div className="hidden md:block fixed bottom-28 right-10 z-[250]">
@@ -94,7 +94,7 @@ const InitiativeOrigin = ({ isOpen, onClose }) => {
             >
                 
                 {/* Section 1: THE GENESIS */}
-                <section className="origin-section min-h-screen flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
+                <section className="origin-section min-h-[105vh] flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
                     <div className="w-full md:w-1/2 flex flex-col md:flex-row items-start gap-4 md:gap-16 z-10 origin-header">
                         <span className="text-[6rem] md:text-[22rem] font-black text-black leading-none select-none opacity-90 tracking-tighter section-anim">
                             1
@@ -123,7 +123,7 @@ const InitiativeOrigin = ({ isOpen, onClose }) => {
                 </section>
 
                 {/* Section 2: THE REACH */}
-                <section className="origin-section min-h-screen flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
+                <section className="origin-section min-h-[105vh] flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
                     <div className="w-full md:w-1/2 flex flex-col md:flex-row-reverse items-start md:items-start gap-4 md:gap-16 z-10 text-right md:text-right justify-end">
                         <span className="text-[6rem] md:text-[22rem] font-black text-black leading-none select-none opacity-90 tracking-tighter section-anim">
                             2
@@ -152,7 +152,7 @@ const InitiativeOrigin = ({ isOpen, onClose }) => {
                 </section>
 
                 {/* Section 3: THE TECHNOLOGY */}
-                <section className="origin-section min-h-screen flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
+                <section className="origin-section min-h-[105vh] flex flex-col items-center snap-start relative overflow-hidden border-b border-black/5 px-6 md:px-24 py-16 md:py-20">
                     <div className="w-full md:w-1/2 flex flex-col md:flex-row items-start gap-4 md:gap-16 z-10">
                         <span className="text-[6rem] md:text-[22rem] font-black text-black leading-none select-none opacity-90 tracking-tighter section-anim">
                             3
@@ -181,7 +181,7 @@ const InitiativeOrigin = ({ isOpen, onClose }) => {
                 </section>
 
                 {/* Section 4: JOIN THE JOURNEY */}
-                <section className="origin-section min-h-screen flex flex-col items-center justify-center snap-start relative overflow-hidden px-10 md:px-24 py-20 bg-black">
+                <section className="origin-section min-h-[105vh] flex flex-col items-center justify-center snap-start relative overflow-hidden px-10 md:px-24 py-20 bg-black">
                     <div className="relative z-10 text-center space-y-12">
                          <h2 className="text-6xl md:text-9xl font-black text-[#fbc02d] uppercase tracking-tighter section-anim">
                             JOIN THE<br />MOVEMENT

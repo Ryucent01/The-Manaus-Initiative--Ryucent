@@ -119,7 +119,9 @@ const App = () => {
                     scrub: true,
                     pin: true,
                     pinSpacing: true,
-                    refreshPriority: 10
+                    refreshPriority: 10,
+                    onLeave: () => gsap.set('.video-container', { display: 'none' }),
+                    onEnterBack: () => gsap.set('.video-container', { display: 'block' })
                 }
             });
             heroTl.to('.curtain-bar', { width: '101%', duration: 1, ease: 'none' });
@@ -667,7 +669,7 @@ const App = () => {
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="relative h-full w-1/4">
                         <div
-                            className="curtain-bar absolute top-[-1vh] left-0 h-[102vh] bg-black w-0 z-20"
+                            className="curtain-bar absolute top-[-5vh] left-0 h-[110vh] bg-black w-0 z-20"
                         />
                     </div>
                 ))}
@@ -678,7 +680,7 @@ const App = () => {
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="relative h-full w-1/4">
                         <div
-                            className="project-curtain-bar absolute top-[-0.5vh] right-0 h-[101vh] bg-[#fbc02d] w-0 z-[180] opacity-0"
+                            className="project-curtain-bar absolute top-[-5vh] right-0 h-[110vh] bg-[#fbc02d] w-0 z-[180] opacity-0"
                         />
                     </div>
                 ))}
