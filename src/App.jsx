@@ -124,7 +124,9 @@ const App = () => {
                     onEnterBack: () => gsap.set(['.video-container', '.hero-content-wrapper'], { autoAlpha: 1 })
                 }
             });
-            heroTl.to('.curtain-bar', { width: '101%', duration: 1, ease: 'none' });
+            heroTl.to('.curtain-bar', { width: '101%', duration: 0.8, ease: 'none' });
+            // Add a slight buffer at the end of the timeline to ensure everything is hidden
+            heroTl.to({}, { duration: 0.2 });
 
             gsap.to('.marquee-track', {
                 xPercent: -100,
@@ -675,7 +677,7 @@ const App = () => {
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="relative h-full w-1/4">
                         <div
-                            className="curtain-bar absolute top-[-5vh] left-0 h-[110vh] bg-black w-0 z-20"
+                            className="curtain-bar absolute top-[-10vh] left-0 h-[120vh] bg-black w-0 z-20"
                         />
                     </div>
                 ))}
@@ -686,7 +688,7 @@ const App = () => {
                 {[...Array(4)].map((_, i) => (
                     <div key={i} className="relative h-full w-1/4">
                         <div
-                            className="project-curtain-bar absolute top-[-5vh] right-0 h-[110vh] bg-[#fbc02d] w-0 z-[180] opacity-0"
+                            className="project-curtain-bar absolute top-[-10vh] right-0 h-[120vh] bg-[#fbc02d] w-0 z-[180] opacity-0"
                         />
                     </div>
                 ))}
