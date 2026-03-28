@@ -550,7 +550,12 @@ const App = () => {
                         ref={videoRef}
                         onLoadedData={() => setIsLoaded(true)}
                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-screen object-cover opacity-0"
-                        autoPlay muted loop playsinline
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        webkit-playsinline="true"
+                        preload="auto"
                     >
                         <source src="/intro.mp4" type="video/mp4" />
                     </video>

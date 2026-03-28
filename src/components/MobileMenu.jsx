@@ -68,7 +68,6 @@ const MobileMenu = ({ showDiscover = false, isProjectOpen = false }) => {
                     y: 0,
                     opacity: 1,
                     scale: 1,
-                    xPercent: -50,
                     duration: 0.6,
                     display: 'flex',
                     ease: "back.out(1.7)"
@@ -78,7 +77,6 @@ const MobileMenu = ({ showDiscover = false, isProjectOpen = false }) => {
                     y: 20,
                     opacity: 0,
                     scale: 0.8,
-                    xPercent: -50,
                     duration: 0.5,
                     display: 'none',
                     ease: "power3.in"
@@ -89,7 +87,6 @@ const MobileMenu = ({ showDiscover = false, isProjectOpen = false }) => {
             gsap.to(discoverPillRef.current, {
                 opacity: 0,
                 scale: 0.8,
-                xPercent: -50,
                 duration: 0.3,
                 display: 'none'
             });
@@ -123,7 +120,7 @@ const MobileMenu = ({ showDiscover = false, isProjectOpen = false }) => {
             <button
                 ref={discoverPillRef}
                 onClick={() => handleLinkClick('project')}
-                className={`fixed ${isProjectOpen ? 'bottom-8 z-[350]' : 'bottom-24 z-[300]'} left-1/2 -translate-x-1/2 bg-[#fbc02d] text-black rounded-full shadow-2xl border border-black/5 active:scale-95 transition-all duration-500 ease-in-out flex items-center justify-center overflow-hidden ${isProjectOpen ? 'w-12 h-12' : 'px-4 py-2'}`}
+                className={`fixed ${isProjectOpen ? 'bottom-8 z-[350]' : 'bottom-24 z-[300]'} left-0 right-0 mx-auto bg-[#fbc02d] text-black rounded-full shadow-2xl border border-black/5 active:scale-95 transition-all duration-500 ease-in-out flex items-center justify-center overflow-hidden ${isProjectOpen ? 'w-12 h-12' : 'px-4 py-2 w-fit'}`}
                 style={{ display: 'none', opacity: 0 }}
             >
                 {isProjectOpen ? (
@@ -146,7 +143,7 @@ const MobileMenu = ({ showDiscover = false, isProjectOpen = false }) => {
             <button
                 ref={pillRef}
                 onClick={toggleMenu}
-                className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[300] bg-black/40 text-white px-7 py-2.5 rounded-full text-[9px] font-mono tracking-[0.4em] uppercase shadow-[0_12px_40px_rgba(0,0,0,0.6)] border border-white/10 active:scale-95 transition-all duration-500 backdrop-blur-[16px] items-center justify-center group overflow-hidden mobile-menu-pill ${isProjectOpen ? '!opacity-0 scale-75 pointer-events-none' : 'flex opacity-0'}`}
+                className={`fixed bottom-8 left-0 right-0 mx-auto z-[300] bg-black/40 text-white px-7 py-2.5 rounded-full text-[9px] font-mono tracking-[0.4em] uppercase shadow-[0_12px_40px_rgba(0,0,0,0.6)] border border-white/10 active:scale-95 transition-all duration-500 backdrop-blur-[16px] items-center justify-center group overflow-hidden mobile-menu-pill w-fit ${isProjectOpen ? '!opacity-0 scale-75 pointer-events-none' : 'flex opacity-0'}`}
             >
                 {/* Subtle highlight sheen */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
