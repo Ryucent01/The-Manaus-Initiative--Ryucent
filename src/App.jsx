@@ -672,6 +672,8 @@ const App = () => {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.7)_100%)] pointer-events-none z-[5]" />
             </section>
 
+            </div>
+
             {/* Black Curtain Overlay for Scroll */}
             <div className="curtain-overlay fixed inset-0 flex pointer-events-none z-20">
                 {[...Array(4)].map((_, i) => (
@@ -692,8 +694,6 @@ const App = () => {
                         />
                     </div>
                 ))}
-            </div>
-
             </div>
 
             <InitiativeOrigin 
